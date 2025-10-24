@@ -1,13 +1,17 @@
+{% extends 'base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    {% block head_extra %}
     <link rel="stylesheet" href="{% static 'potplayapp/css/global.css' %}">
-    <title>Alterar Perfil</title>
+    {% endblock %}
+    <title>{% block title %}Alterar Perfil {% endblock %}</title>
 </head>
 <body>
+{% block content %}
     <h2>Alterar Perfil</h2>
 
     <hr>
@@ -30,5 +34,6 @@
 
     <br>
     <a href="{% url 'perfil' %}">Cancelar e Voltar ao Perfil</a>
+{% endblock %}
 </body>
 </html>

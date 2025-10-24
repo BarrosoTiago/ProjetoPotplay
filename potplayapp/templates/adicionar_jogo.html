@@ -1,17 +1,17 @@
+{% extends 'base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    {% block head_extra %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'potplayapp/css/global.css' %}">
     <!-- Link para a biblioteca de ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Adicionar Jogo - PotPlay</title>
-
     <style>
         body {
             background-color: #0A031D;
@@ -51,8 +51,11 @@
         .cancelar-link { display: block; margin-top: 1rem; color: #aaa; text-decoration: none; }
         .cancelar-link:hover { color: white; }
     </style>
+    {% endblock %}
+    <title>{% block title %}Adicionar Jogo {% endblock %}</title>
 </head>
 <body>
+{% block content %}
     <div class="container">
         <div class="header">
             <a href="{% url 'perfil' %}" class="seta-voltar">&#8592;</a>
@@ -126,6 +129,6 @@
         setupFileUploadDisplay('{{ form.capa.id_for_label }}', 'capa-name-display');
         setupFileUploadDisplay('{{ form.arquivo_jogo.id_for_label }}', 'file-name-display');
     </script>
-
+{% endblock %}
 </body>
 </html>

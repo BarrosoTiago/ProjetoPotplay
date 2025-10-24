@@ -1,9 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    {% block head_extra %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- FONTE ATUALIZADA PARA POPPINS -->
@@ -12,9 +14,11 @@
     <link rel="stylesheet" href="{% static 'potplayapp/css/todos_comentarios.css' %}">
     <!-- Link para a biblioteca de ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Feed de Comentários - PotPlay</title>
+    {% endblock %}
+    <title>{% block title %}Feed de Comentários{% endblock%}</title>
 </head>
 <body>
+{% block content %}
 <div class="container">
     <div class="header-feed">
         <h1>Feed de Comentários</h1>
@@ -46,5 +50,6 @@
         {% endfor %}
     </div>
 </div>
+{% endblock %}
 </body>
 </html>

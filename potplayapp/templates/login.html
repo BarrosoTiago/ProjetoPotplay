@@ -1,19 +1,22 @@
+{% extends 'base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    {% block head_extra %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="{% static 'potplayapp/css/reset.css' %}"> -->
     <link rel="stylesheet" href="{% static 'potplayapp/css/cadastro-login.css' %}">
     <link rel="stylesheet" href="{% static 'potplayapp/css/global.css' %}">
-    <title>Login - PotPlay</title>
+    {% endblock %}
+    <title>{% block title%}Login {% endblock %}</title>
 </head>
 <body>
-
+{% block content %}
     <div class="main-box">
         <p>Jogos para se divertir enquanto aprende!</p>
         <h1>POTPLAY</h1>
@@ -33,6 +36,7 @@
         <img src="{% static 'potplayapp/imgs/logo.png' %}" alt="Logo Potplay">
     </div>
 
+{% endblock %}
 
 </body>
 </html>

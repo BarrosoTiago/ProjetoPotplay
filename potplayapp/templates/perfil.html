@@ -1,17 +1,18 @@
+{% extends 'base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil do Usuário - PotPlay</title>
+    <title>{% block title %} Perfil do Usuário {% endblock %}</title>
+    {% block head_extra %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'potplayapp/css/global.css' %}">
     <!-- Link para a biblioteca de ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
         /* Estilos principais da página */
         body {
@@ -175,8 +176,11 @@
         }
 
     </style>
+    {% endblock %}
+
 </head>
 <body>
+{% block content %}
     <div class="header-perfil">
         <a href="{% url 'home' %}" class="seta-voltar">&#8592;</a>
         <h2>PERFIL DO USUÁRIO</h2>
@@ -256,5 +260,6 @@
             </div>
         </div>
     </div>
+{% endblock %}
 </body>
 </html>
